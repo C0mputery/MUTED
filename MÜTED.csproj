@@ -1,0 +1,9 @@
+<Project Sdk="Godot.NET.Sdk/4.4.1">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="GodotSharp.SourceGenerators" Version="2.6.0-250131-2115.Release" />
+  </ItemGroup>
+</Project>
