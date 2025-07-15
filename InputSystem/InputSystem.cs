@@ -3,7 +3,11 @@ using System;
 namespace Godot;
 
 [InputMap(nameof(InputAction))]
-public partial class InputSystem : Node;
+public partial class InputSystem : Node {
+    public static Vector2 GetMovementInput() {
+        return Input.GetVector(Forwards.Action, Forwards.Action, Forwards.Action, Forwards.Action);
+    }
+}
 
 public class InputAction(StringName action) {
     public StringName Action => action;
