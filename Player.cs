@@ -10,8 +10,8 @@ public partial class Player : CharacterBody3D {
 	public override void _Ready() { InputSystem.Jump.Pressed += Jump; }
 	public override void _ExitTree() { InputSystem.Jump.Pressed -= Jump; }
 
-	private bool ShouldJump = false;
-	public void Jump() { ShouldJump = true; }
+	private bool _shouldJump = false;
+	public void Jump() { _shouldJump = true; }
 	
 	public override void _PhysicsProcess(double delta) {
 		Vector3 velocity = Velocity;
@@ -21,9 +21,9 @@ public partial class Player : CharacterBody3D {
 			velocity += GetGravity() * (float)delta;
 		}
 		
-		if (ShouldJump && IsOnFloor()) {
+		if (_shouldJump && IsOnFloor()) {
 			velocity.Y = JumpVelocity;
-			ShouldJump = false;
+			_shouldJump = false;
 		}
 
 		Vector2 inputDir = InputSystem.GetMovementInput();
