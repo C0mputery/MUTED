@@ -13,7 +13,7 @@ public partial class Player : CharacterBody3D {
 		if (!IsOnFloor()) {
 			velocity += GetGravity() * (float)delta;
 		}
-
+		
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor()) {
 			velocity.Y = JumpVelocity;
